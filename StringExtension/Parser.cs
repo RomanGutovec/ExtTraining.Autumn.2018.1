@@ -36,6 +36,10 @@ namespace StringExtension
                 result += rank * index;
                 rank *= @base;
             }
+            if (result >= int.MaxValue)
+            {
+                throw new ArgumentException("Result is too big");
+            }
 
             return (int)result;
         }
